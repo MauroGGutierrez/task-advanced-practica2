@@ -4,10 +4,14 @@ import "./advancedDesign.css";
 
 function TaskAdvanced() {
   const [array, setArray] = useState([]);
+  const [Obj, setObj] = useState([]);
   const [enter, setEnter] = useState("");
-  const [object, setObject] = useState({
-    id: 0, name: "enter.value", complete: false
-  })
+  const objectMain = () => {
+    const objectTask = {
+      id: 0, name: "", complete: false,
+  }
+  setArray([...obj, objectTask])
+  }
   console.log(object)
   const addButton = (e) => {
     e.preventDefault();
@@ -34,7 +38,7 @@ function TaskAdvanced() {
             <div className='boxs'>
               <button className='deleteButton'>Delete</button>
               <p key={task}> {task} </p>
-              <button className='completeButton'>complete</button>
+              <button type='button' className='completeButton' onClick={() => setObject(true)}>{!object.complete ? "completado" : "incompleto"}</button>
             </div>
           ))}
         </div>
